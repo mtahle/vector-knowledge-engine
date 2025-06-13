@@ -1,0 +1,7 @@
+{
+  "id": "35941056607",
+  "title": "Focus day 22-02-15 - SonarQube",
+  "url": "https://i-p-e-x.atlassian.net/wiki/pages/viewpage.action?pageId=35941056607",
+  "content": "<p>Attendees:</p><p><ac:link><ri:user ri:userkey=\"8a7f8089741f73fc0174202bba0a00bf\" /></ac:link> </p><p><ac:link><ri:user ri:userkey=\"8a7f80835e6f9757015e7131fd8b008a\" /></ac:link> </p><p /><p>We tested SonarQube, using our portfolio <a href=\"https://sonarqube.platform.iig.systems/portfolio?id=IPEX-DevOps-portfolio\" data-card-appearance=\"inline\">https://sonarqube.platform.iig.systems/portfolio?id=IPEX-DevOps-portfolio</a>,  and included configuration in our repositories</p><p><a href=\"https://github.com/inter-ikea/cbf-re-ipex-devops-default-cicd\">inter-ikea/cbf-re-ipex-devops-default-cicd (github.com)</a></p><p><a href=\"https://github.com/inter-ikea/cbf-re-ipex-devops-spa-app\">inter-ikea/cbf-re-ipex-devops-spa-app (github.com)</a></p><p /><p>Easy to get started via <a href=\"https://interikea.service-now.com/help?sys_kb_id=b4dae8cedb8f38d0c85b14a05b961990&amp;id=kb_article_view&amp;sysparm_rank=1&amp;sysparm_tsqueryId=cf82d361872d0d5451ebbaec8bbb3519\">Knowledge Base article</a> from Platform team.</p><p>Things to follow up on.</p><p>Platform team will follow up on revoke of tokens for users that are offboarded in Azure AD.</p><p>Look into approach for sharing SonarQube data for all IPEX teams</p><p>It is possible to create additional quality gates together with Platforms team.  </p>",
+  "last_modified": "2022-02-15T14:49:19.849Z"
+}

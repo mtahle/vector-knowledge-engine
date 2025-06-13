@@ -1,0 +1,7 @@
+{
+  "id": "666501184",
+  "title": "Inventory of Cloud Accounts",
+  "url": "https://i-p-e-x.atlassian.net/wiki/pages/viewpage.action?pageId=666501184",
+  "content": "<h1>Intro</h1><p>This page contains lists of all active and closed cloud accounts used in IPEX. Lists of accounts with different cloud platforms are kept separate.&nbsp;<br />It is mandatory to list all accounts owned by IPEX on this page. It is also mandatory to move closed accounts to the table created for this purpose.&nbsp;</p><p class=\"auto-cursor-target\"><ac:link><ri:page ri:content-title=\"AWS accounts\" ri:version-at-save=\"3\" /></ac:link></p><p class=\"auto-cursor-target\"><ac:link><ri:page ri:content-title=\"Azure subscriptions\" ri:version-at-save=\"5\" /></ac:link></p>",
+  "last_modified": "2019-06-03T13:48:57.494Z"
+}

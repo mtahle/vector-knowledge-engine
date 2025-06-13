@@ -1,0 +1,7 @@
+{
+  "id": "1310819184",
+  "title": "AWS - DevOps Team Cross Account Access",
+  "url": "https://i-p-e-x.atlassian.net/wiki/pages/viewpage.action?pageId=1310819184",
+  "content": "<p>For the DevOps team to be able to assist any dev team with AWS related matters the DevOps team need access to the AWS account. This is accomplished by setting up Cross Account Access letting users in the DevOps AWS account assume a role in Dev Team account.</p><p>There is a <a href=\"https://ipex-public-read-only-4nqz1k449i.s3-eu-west-1.amazonaws.com/cross-account-devops-team-access.yaml\">CloudFormation</a> template created that set up everything needed. Template is located in a public S3 bucket belonging to the DevOps team.</p><p>To deploy the template <a href=\"https://eu-west-1.console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/create/review?templateURL=https://ipex-public-read-only-4nqz1k449i.s3-eu-west-1.amazonaws.com/cross-account-devops-team-access.yaml&amp;stackName=IpexDevOpsTeamCrossAccountAccess&amp;param_RoleName=IpexDevOpsTeamCrossAccountAccess&amp;param_OtherAccountNumber=707635190848&amp;param_AccessLevel=Full-Access\">click here</a> and then follow the guide. The quick-launch-link will fill in all the different parameters. Leave all parameters to the default value. Access Level is default set to Full Access, this can be changed to Read Only. Changing to Read Only will only allow the DevOps team to investigate and not help doing changes.</p><p />",
+  "last_modified": "2020-05-25T13:17:38.251Z"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "1154711589",
+  "title": "Create account in Cloud portal",
+  "url": "https://i-p-e-x.atlassian.net/wiki/pages/viewpage.action?pageId=1154711589",
+  "content": "<p>For Alicloud account creation is fully integrated to the Cloud portal. For AWS the accounts and contact persons are set outside of the portal itself. The order account flow guides you in supplying the the necessary  information.</p><p>In cloud portal choose Cloud Accounts to get started</p><ac:image ac:align=\"center\" ac:layout=\"center\" ac:original-height=\"277\" ac:original-width=\"500\"><ri:attachment ri:filename=\"image-20200331-091448.png\" ri:version-at-save=\"1\" /></ac:image><p>You will have to enter persons that are owners and technical contacts (persons with inter mail and access to cloud portal).</p><ac:image ac:align=\"center\" ac:layout=\"center\" ac:original-height=\"251\" ac:original-width=\"475\"><ri:attachment ri:filename=\"image-20200331-092116.png\" ri:version-at-save=\"1\" /></ac:image><p>The account is created based on the information given after the onboarding meeting. After that it is up to the account responsible to give access to account. </p>",
+  "last_modified": "2020-04-28T09:00:42.557Z"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "36092444737",
+  "title": "Security related questions for requirement",
+  "url": "https://i-p-e-x.atlassian.net/wiki/pages/viewpage.action?pageId=36092444737",
+  "content": "<p>Examples of questions related to requirement used by CBF and as well from kitchen planner requirement.</p><p> </p><ol><li><p>What experiences do you have in securing Azure cloud-platforms?</p></li><li><p>What experiences do you have in securing on-premise Microsoft-based infrastructures and applications?</p></li><li><p>What experiences do you have in securing APIs, web applications and mobile apps?</p></li><li><p>What experiences do you have in applying industry-leading practices for security, such as NIST and OWASP?</p></li><li><p>What experiences do you have in reporting technical risks to management?</p></li><li><p>What is your past experiences?</p></li><li><p>Our technology stack consists of Akamai, REST APIs, AWS, Serverless, Node. Have you worked with those technologies before?</p></li><li><p>We have a lot of integrations in our projects. Sometimes security issues span over multiple vendors. How would you handle that?</p></li><li><p>Do you have experience in conducting vulnerability assessments and penetration testing?</p></li><li><p>Our software runs in China. Have you past experience with the challenges of running web applications in China?</p></li><li><p>How do you approach explaining technical issues to the business, so that they can understand, plan and prioritize issues?</p></li></ol>",
+  "last_modified": "2023-12-15T13:24:41.336Z"
+}

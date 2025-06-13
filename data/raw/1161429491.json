@@ -1,0 +1,7 @@
+{
+  "id": "1161429491",
+  "title": "User management",
+  "url": "https://i-p-e-x.atlassian.net/wiki/pages/viewpage.action?pageId=1161429491",
+  "content": "<h2>CI / CD pipeline</h2><p>The platforms that are supported are: </p><ul><li><p>Jira</p></li><li><p>Azure DevOps</p></li><li><p>GitHub </p></li></ul><h3>Azure DevOps and GitHub</h3><h4>On-boarding</h4><ol><li><p><ac:link ac:card-appearance=\"inline\"><ri:page ri:space-key=\"IPEX\" ri:content-title=\"Access REX Azure DevOps\" ri:version-at-save=\"19\" /><ac:link-body>Access IPEX Azure DevOps</ac:link-body></ac:link> </p></li><li><p><ac:link ac:card-appearance=\"inline\"><ri:page ri:content-title=\"Access Inter-IKEA GitHub Organization\" ri:space-key=\"IPEX\" ri:version-at-save=\"34\" /><ac:link-body>Access inter-ikea GitHub organization</ac:link-body></ac:link> </p></li></ol><h4>Off-boarding</h4><ol><li><p>User is removed from Azure AD via request to help desk</p></li></ol><h3>Confluence &amp; Jira</h3><p />",
+  "last_modified": "2022-01-13T08:13:53.896Z"
+}

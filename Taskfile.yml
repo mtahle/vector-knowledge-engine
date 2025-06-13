@@ -1,0 +1,397 @@
+version: '3'
+
+tasks:
+  setup:local:
+    desc: Setup local development environment
+    dir: src/function
+    cmds:
+      # Install Azure Functions Core Tools
+      - |
+        if ! command -v func &> /dev/null; then
+          echo "Installing Azure Functions Core Tools..."
+          if [[ "$OSTYPE" == "darwin"* ]]; then
+            brew tap azure/functions
+            brew install azure-functions-core-tools@4
+          else
+            npm install -g azure-functions-core-tools@4
+          fi
+        fi
+      # Setup Python environment
+      - python -m venv .venv
+      - source .venv/bin/activate && pip install -r requirements.txt
+      # Create local settings if not exists
+      - |
+        if [ ! -f local.settings.json ]; then
+          echo '{
+            "IsEncrypted": false,
+            "Values": {
+              "FUNCTIONS_WORKER_RUNTIME": "python",
+              "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+              "AZURE_STORAGE_CONNECTION_STRING": "",
+              "AZURE_STORAGE_CONTAINER": "knowledge-base",
+              "MODEL_NAME": "multi-qa-MiniLM-L6-cos-v1",
+              "CONFIDENCE_THRESHOLD": "0.3",
+              "MAX_RESULTS": "5",
+              "CONFLUENCE_URL": "",
+              "CONFLUENCE_USERNAME": "",
+              "CONFLUENCE_API_TOKEN": "",
+              "CONFLUENCE_SPACE": "",
+              "SLACK_BOT_TOKEN": "",
+              "SLACK_SIGNING_SECRET": "",
+              "LOG_LEVEL": "INFO"
+            }
+          }' > local.settings.json
+        fi
+      # Install Azure CLI if not present
+      - |
+        if ! command -v az &> /dev/null; then
+          echo "Installing Azure CLI..."
+          if [[ "$OSTYPE" == "darwin"* ]]; then
+            brew update && brew install azure-cli
+          else
+            curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+          fi
+        fi
+      - echo "Local environment setup complete. Please update local.settings.json with your configuration values."
+
+  setup:azure:
+    desc: Setup Azure resources for Vector Knowledge Engine deployment
+    cmds:
+      # Check if Azure CLI is installed and logged in
+      - |
+        if ! command -v az &> /dev/null; then
+          echo "Error: Azure CLI is not installed. Please run 'task setup:local' first."
+          exit 1
+        fi
+      - |
+        echo "Checking Azure CLI login status..."
+        if ! az account show &> /dev/null; then
+          echo "Please login to Azure CLI first:"
+          echo "az login"
+          exit 1
+        fi
+      # Set up variables (can be overridden via environment)
+      - |
+        export RESOURCE_GROUP="${RESOURCE_GROUP:-rg-vector-knowledge-engine}"
+        export LOCATION="${LOCATION:-northeurope}"
+        export STORAGE_ACCOUNT="${STORAGE_ACCOUNT:-stvectorknowledge$(date +%s)}"
+        export FUNCTION_APP="${FUNCTION_APP:-fa-vector-knowledge-engine-$(date +%s)}"
+        export APP_INSIGHTS="${APP_INSIGHTS:-ai-vector-knowledge-engine}"
+        export FUNCTION_PLAN="${FUNCTION_PLAN:-plan-vector-knowledge-engine}"
+        
+        echo "Using the following configuration:"
+        echo "Resource Group: $RESOURCE_GROUP"
+        echo "Location: $LOCATION"
+        echo "Storage Account: $STORAGE_ACCOUNT"
+        echo "Function App: $FUNCTION_APP"
+        echo "Function Plan: $FUNCTION_PLAN"
+        echo "App Insights: $APP_INSIGHTS"
+        echo ""
+        
+        # Create resource group
+        echo "Creating resource group..."
+        az group create \
+          --name "$RESOURCE_GROUP" \
+          --location "$LOCATION" \
+          --output table
+        
+        # Create storage account
+        echo "Creating storage account..."
+        az storage account create \
+          --name "$STORAGE_ACCOUNT" \
+          --resource-group "$RESOURCE_GROUP" \
+          --location "$LOCATION" \
+          --sku Standard_LRS \
+          --allow-blob-public-access false \
+          --output table
+        
+        # Create storage container
+        echo "Creating storage container..."
+        az storage container create \
+          --name knowledge-base \
+          --account-name "$STORAGE_ACCOUNT" \
+          --public-access off \
+          --output table
+        
+        # Get storage connection string
+        echo "Getting storage connection string..."
+        AZURE_STORAGE_CONNECTION_STRING=$(az storage account show-connection-string \
+          --name "$STORAGE_ACCOUNT" \
+          --resource-group "$RESOURCE_GROUP" \
+          --query connectionString \
+          --output tsv)
+        
+        # Create Application Insights
+        echo "Creating Application Insights..."
+        az monitor app-insights component create \
+          --app "$APP_INSIGHTS" \
+          --location "$LOCATION" \
+          --resource-group "$RESOURCE_GROUP" \
+          --application-type web \
+          --output table
+        
+        # Create Premium Function App Plan
+        echo "Creating Premium Function App Plan..."
+        az functionapp plan create \
+          --name "$FUNCTION_PLAN" \
+          --resource-group "$RESOURCE_GROUP" \
+          --location "$LOCATION" \
+          --sku EP1 \
+          --is-linux true \
+          --output table
+        
+        # Create Function App with Premium Plan
+        echo "Creating Function App..."
+        az functionapp create \
+          --name "$FUNCTION_APP" \
+          --storage-account "$STORAGE_ACCOUNT" \
+          --resource-group "$RESOURCE_GROUP" \
+          --plan "$FUNCTION_PLAN" \
+          --functions-version 4 \
+          --runtime python \
+          --runtime-version 3.12 \
+          --app-insights "$APP_INSIGHTS" \
+          --os-type Linux \
+          --https-only true \
+          --output table
+        
+        # Configure Function App basic settings
+        echo "Configuring Function App settings..."
+        az functionapp config appsettings set \
+          --name "$FUNCTION_APP" \
+          --resource-group "$RESOURCE_GROUP" \
+          --settings \
+          AZURE_STORAGE_CONNECTION_STRING="$AZURE_STORAGE_CONNECTION_STRING" \
+          AZURE_STORAGE_CONTAINER=knowledge-base \
+          MODEL_NAME=multi-qa-MiniLM-L6-cos-v1 \
+          CONFIDENCE_THRESHOLD=0.3 \
+          MAX_RESULTS=5 \
+          LOG_LEVEL=INFO \
+          --output table
+        
+        # Configure CORS for web applications
+        echo "Configuring CORS..."
+        az functionapp cors add \
+          --name "$FUNCTION_APP" \
+          --resource-group "$RESOURCE_GROUP" \
+          --allowed-origins "*" \
+          --output table
+        
+        echo ""
+        echo "✅ Azure setup completed successfully!"
+        echo ""
+        echo "📋 Resource Summary:"
+        echo "==================="
+        echo "Resource Group: $RESOURCE_GROUP"
+        echo "Storage Account: $STORAGE_ACCOUNT"
+        echo "Function Plan: $FUNCTION_PLAN (Premium EP1)"
+        echo "Function App: $FUNCTION_APP"
+        echo "Application Insights: $APP_INSIGHTS"
+        echo "Function App URL: https://$FUNCTION_APP.azurewebsites.net"
+        echo ""
+        echo "🔧 Next Steps:"
+        echo "=============="
+        echo "1. Configure data source settings (optional):"
+        echo "   task azure:config:confluence"
+        echo "   task azure:config:slack"
+        echo "   task azure:config:teams"
+        echo ""
+        echo "2. Build and upload your vector index:"
+        echo "   task extract"
+        echo "   task build-index"
+        echo "   task azure:upload-index"
+        echo ""
+        echo "3. Deploy your function:"
+        echo "   task func:deploy"
+        echo ""
+        echo "💡 Save these resource names for future reference!"
+
+  azure:config:confluence:
+    desc: Configure Confluence integration settings in Azure Function App
+    cmds:
+      - |
+        if [ -z "$FUNCTION_APP" ] || [ -z "$RESOURCE_GROUP" ]; then
+          echo "Error: Please set FUNCTION_APP and RESOURCE_GROUP environment variables"
+          echo "Example: export FUNCTION_APP=fa-vector-knowledge-engine-123456"
+          echo "         export RESOURCE_GROUP=rg-vector-knowledge-engine"
+          exit 1
+        fi
+        
+        echo "Enter Confluence configuration:"
+        read -p "Confluence URL (e.g., https://company.atlassian.net): " CONFLUENCE_URL
+        read -p "Confluence Username (email): " CONFLUENCE_USERNAME
+        read -p "Confluence API Token: " CONFLUENCE_API_TOKEN
+        read -p "Confluence Space Key: " CONFLUENCE_SPACE
+        
+        echo "Configuring Confluence settings..."
+        az functionapp config appsettings set \
+          --name "$FUNCTION_APP" \
+          --resource-group "$RESOURCE_GROUP" \
+          --settings \
+          CONFLUENCE_URL="$CONFLUENCE_URL" \
+          CONFLUENCE_USERNAME="$CONFLUENCE_USERNAME" \
+          CONFLUENCE_API_TOKEN="$CONFLUENCE_API_TOKEN" \
+          CONFLUENCE_SPACE="$CONFLUENCE_SPACE" \
+          --output table
+        
+        echo "✅ Confluence configuration completed!"
+
+  azure:config:slack:
+    desc: Configure Slack integration settings in Azure Function App
+    cmds:
+      - |
+        if [ -z "$FUNCTION_APP" ] || [ -z "$RESOURCE_GROUP" ]; then
+          echo "Error: Please set FUNCTION_APP and RESOURCE_GROUP environment variables"
+          exit 1
+        fi
+        
+        echo "Enter Slack configuration:"
+        read -p "Slack Bot Token (xoxb-...): " SLACK_BOT_TOKEN
+        read -p "Slack Signing Secret: " SLACK_SIGNING_SECRET
+        
+        echo "Configuring Slack settings..."
+        az functionapp config appsettings set \
+          --name "$FUNCTION_APP" \
+          --resource-group "$RESOURCE_GROUP" \
+          --settings \
+          SLACK_BOT_TOKEN="$SLACK_BOT_TOKEN" \
+          SLACK_SIGNING_SECRET="$SLACK_SIGNING_SECRET" \
+          --output table
+        
+        # Configure CORS for Slack
+        az functionapp cors add \
+          --name "$FUNCTION_APP" \
+          --resource-group "$RESOURCE_GROUP" \
+          --allowed-origins "https://*.slack.com" \
+          --output table
+        
+        echo "✅ Slack configuration completed!"
+
+  azure:config:teams:
+    desc: Configure Teams integration settings in Azure Function App
+    cmds:
+      - |
+        if [ -z "$FUNCTION_APP" ] || [ -z "$RESOURCE_GROUP" ]; then
+          echo "Error: Please set FUNCTION_APP and RESOURCE_GROUP environment variables"
+          exit 1
+        fi
+        
+        echo "Enter Teams configuration:"
+        read -p "Teams App ID: " TEAMS_APP_ID
+        read -p "Teams App Password: " TEAMS_APP_PASSWORD
+        
+        echo "Configuring Teams settings..."
+        az functionapp config appsettings set \
+          --name "$FUNCTION_APP" \
+          --resource-group "$RESOURCE_GROUP" \
+          --settings \
+          TEAMS_APP_ID="$TEAMS_APP_ID" \
+          TEAMS_APP_PASSWORD="$TEAMS_APP_PASSWORD" \
+          --output table
+        
+        # Configure CORS for Teams
+        az functionapp cors add \
+          --name "$FUNCTION_APP" \
+          --resource-group "$RESOURCE_GROUP" \
+          --allowed-origins "https://*.teams.microsoft.com" \
+          --output table
+        
+        echo "✅ Teams configuration completed!"
+
+  azure:upload-index:
+    desc: Upload vector index to Azure Storage
+    cmds:
+      - |
+        if [ -z "$STORAGE_ACCOUNT" ]; then
+          echo "Error: Please set STORAGE_ACCOUNT environment variable"
+          echo "Example: export STORAGE_ACCOUNT=stvectorknowledge123456"
+          exit 1
+        fi
+        
+        if [ ! -d "data/index" ]; then
+          echo "Error: Index directory not found. Please run 'task build-index' first."
+          exit 1
+        fi
+        
+        echo "Uploading index files to Azure Storage..."
+        az storage blob upload-batch \
+          --account-name "$STORAGE_ACCOUNT" \
+          --destination knowledge-base \
+          --source data/index \
+          --output table
+        
+        echo "✅ Index upload completed!"
+
+  extract:
+    desc: Extract content from data sources
+    dir: src/scripts
+    cmds:
+      - python extract.py
+
+  build-index:
+    desc: Build FAISS vector index from extracted content
+    dir: src/scripts
+    cmds:
+      - python build_index.py
+
+  build-index:improved:
+    desc: Build enhanced FAISS vector index with better chunking and preprocessing
+    dir: src/scripts
+    cmds:
+      - python build_index_improved.py
+
+  build-index:qa-model:
+    desc: Build index using Q&A optimized embedding model
+    dir: src/scripts
+    cmds:
+      - EMBEDDING_MODEL=multi-qa-MiniLM-L6-cos-v1 python build_index_improved.py
+
+  build-index:large-model:
+    desc: Build index using larger, higher quality embedding model
+    dir: src/scripts
+    cmds:
+      - EMBEDDING_MODEL=all-mpnet-base-v2 python build_index_improved.py
+
+  func:start:
+    desc: Start the Azure Function locally
+    dir: src/function
+    cmds:
+      - func start
+
+  func:deploy:
+    desc: Deploy the Azure Function to Azure
+    dir: src/function
+    cmds:
+      - |
+        if [ -z "$FUNCTION_APP" ]; then
+          echo "Error: Please set FUNCTION_APP environment variable"
+          echo "Example: export FUNCTION_APP=fa-vector-knowledge-engine-123456"
+          echo "You can find this name from the output of 'task setup:azure'"
+          exit 1
+        fi
+        func azure functionapp publish "$FUNCTION_APP" --python --build remote
+
+  func:install:
+    desc: Install Azure Function dependencies
+    dir: src/function
+    cmds:
+      - python -m venv .venv
+      - source .venv/bin/activate && pip install -r requirements.txt
+
+  ask:
+    desc: Ask a question to the vector knowledge engine
+    cmds:
+      - python query.py "{{.CLI_ARGS}}"
+
+  debug:search:
+    desc: Diagnose search quality issues and analyze data
+    dir: src/scripts
+    cmds:
+      - python debug_search.py
+
+  diagram:generate:
+    desc: Generate system architecture diagram
+    cmds:
+      - pip install diagrams
+      - python system_diagram.py
+      - echo "System architecture diagram generated as 'system_architecture.png'"

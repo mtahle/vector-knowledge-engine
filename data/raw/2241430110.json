@@ -1,0 +1,7 @@
+{
+  "id": "2241430110",
+  "title": "Onboarding Welcome mail",
+  "url": "https://i-p-e-x.atlassian.net/wiki/pages/viewpage.action?pageId=2241430110",
+  "content": "<p>When the <ac:link><ri:page ri:content-title=\"Default Setup for Product Teams\" ri:version-at-save=\"14\" /><ac:link-body>default setup</ac:link-body></ac:link> has been done send a mail to on-boarded persons with starting points and some high level information. Template for mail is outlined below but some information needs to be updated to match current product.</p><p><em>&ldquo;Title: Welcome to REX DevOps tools for {Teamxyz}</em></p><p><em>Welcome!&nbsp;</em></p><p><em>You have been on-boarded to Inter IKEA DevOps setup.</em></p><p><em>The first step is to set up access to the inter-IKEA <strong>GitHub</strong>&nbsp;<strong>Organization&nbsp;</strong>where REX is represented as IPEX team. Check here for instruction on how to get started, </em><ac:link ac:card-appearance=\"inline\"><ri:page ri:space-key=\"IPEX\" ri:content-title=\"Access Inter-IKEA GitHub Organization\" ri:version-at-save=\"48\" /><ac:link-body>Access Inter-IKEA GitHub Organization</ac:link-body></ac:link><em> &nbsp;</em></p><p><em>When you have access see more information in your team welcome message in GitHub {deep link}</em></p><p><em>Best Regards</em></p><p><em>/</em><ac:link><ri:page ri:content-title=\"DevOps Team\" ri:space-key=\"IPEX\" ri:version-at-save=\"27\" /><ac:link-body><em>DevOps Team</em></ac:link-body></ac:link><em>&rdquo;</em></p>",
+  "last_modified": "2024-09-10T13:21:00.746Z"
+}

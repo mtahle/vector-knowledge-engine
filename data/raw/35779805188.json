@@ -1,0 +1,7 @@
+{
+  "id": "35779805188",
+  "title": "Retrospectives",
+  "url": "https://i-p-e-x.atlassian.net/wiki/pages/viewpage.action?pageId=35779805188",
+  "content": "<p style=\"text-align: right;\"><ac:macro ac:name=\"create-from-template\"><ac:parameter ac:name=\"blueprintModuleCompleteKey\">com.atlassian.confluence.plugins.confluence-software-blueprints:retrospectives-blueprint</ac:parameter><ac:parameter ac:name=\"buttonLabel\">Add Retrospective</ac:parameter><ac:parameter ac:name=\"spaceKey\">DEVOPS</ac:parameter><ac:parameter ac:name=\"templateName\">com.atlassian.confluence.plugins.confluence-software-blueprints:retrospectives-blueprint</ac:parameter></ac:macro></p><p><ac:macro ac:name=\"detailssummary\"><ac:parameter ac:name=\"label\">retrospective</ac:parameter><ac:parameter ac:name=\"firstcolumn\">Title</ac:parameter><ac:parameter ac:name=\"headings\">Date,Participants</ac:parameter></ac:macro></p>",
+  "last_modified": "2022-01-13T07:35:35.698Z"
+}

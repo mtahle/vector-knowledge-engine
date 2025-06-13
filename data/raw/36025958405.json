@@ -1,0 +1,7 @@
+{
+  "id": "36025958405",
+  "title": "DevOps teams GitHub build bot - IPEXBuildBot",
+  "url": "https://i-p-e-x.atlassian.net/wiki/pages/viewpage.action?pageId=36025958405",
+  "content": "<p>We have a GitHub user acting as build bot. The GitHub user is connected to our <ac:link><ri:page ri:content-title=\"DevOps Team\" ri:space-key=\"IPEX\" ri:version-at-save=\"23\" /><ac:link-body>mail</ac:link-body></ac:link> and the credentials are available in our <a href=\"https://portal.azure.com/#@OneIIG.onmicrosoft.com/resource/subscriptions/57418639-f7e2-4874-9837-1f76377cadc9/resourceGroups/rg-devops-prd-secrets/providers/Microsoft.KeyVault/vaults/kv-devops-metrics-prd/overview\">keyvault</a>.</p><p>Joakim has 2FA configured but the process is to use recovery codes also available in <a href=\"https://portal.azure.com/#@OneIIG.onmicrosoft.com/resource/subscriptions/57418639-f7e2-4874-9837-1f76377cadc9/resourceGroups/rg-devops-prd-secrets/providers/Microsoft.KeyVault/vaults/kv-devops-metrics-prd/overview\">keyvault</a>.</p>",
+  "last_modified": "2023-10-11T07:18:14.728Z"
+}

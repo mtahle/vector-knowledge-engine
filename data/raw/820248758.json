@@ -1,0 +1,7 @@
+{
+  "id": "820248758",
+  "title": "Quality and testing",
+  "url": "https://i-p-e-x.atlassian.net/wiki/pages/viewpage.action?pageId=820248758",
+  "content": "<h2>Rationale:</h2><p>Introduce test strategy, minimum test requirement and proposed tools for projects implementing IPEX DevOps and agile delivery model.</p><p><br /></p><p>This section includes Test strategy, Minimum test requirement, tools etc for individual types of testing.</p><ul><li>Automation Testing</li><li>API Testing</li><li>Performance Testing</li><li>Integration Testing</li><li>Unit Testing</li></ul><p><br /></p><p><br /></p>",
+  "last_modified": "2019-10-08T08:03:45.928Z"
+}

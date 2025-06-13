@@ -1,0 +1,7 @@
+{
+  "id": "979238948",
+  "title": "AWS Cost Data Tool",
+  "url": "https://i-p-e-x.atlassian.net/wiki/pages/viewpage.action?pageId=979238948",
+  "content": "<p>The cost monitoring tool is used by DevOps team to keep track of cloud spend by the Kitchen Planner team. The tool runs in the DevOps <a href=\"https://i-p-e-x.atlassian.net/wiki/spaces/DEVOPS/pages/807829861/AWS+accounts\">ipex-agent</a> account.</p><p>Full documentation is available in the <a href=\"https://github.com/inter-ikea/cbf-re-ipex-devops-cost-monitoring\">Git</a></p><h2>Background</h2><p>The tool was originally used to extract the cost of AWS accounts ordered via IKEA IT (Ingka). Nowadays, all accounts used by IPEX are owned by Inter-Ikea organization hence the tool has lost its original purpose, but due to some access to 3Dvia accounts it is still valid.</p><p />",
+  "last_modified": "2024-06-20T07:30:43.882Z"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "1069580590",
+  "title": "AWS Support plan strategy",
+  "url": "https://i-p-e-x.atlassian.net/wiki/pages/viewpage.action?pageId=1069580590",
+  "content": "<p>AWS offers different support plans, tiers. Each plan offers different support and response time, at a different cost.</p><p>All accounts have Basic support included free of charge. Basic support only gives the possibility to request limit increases on AWS services.</p><p>For information on premium support plans see: <a href=\"https://aws.amazon.com/premiumsupport/plans/\">https://aws.amazon.com/premiumsupport/plans/</a></p><h2>IPEX Recommendation</h2><p>The recommendation is that the planner support requirements should be backed by a AWS Support plan that can help fulfil that requirement. If the planner has a requirement to offer 24/7 support the AWS Support plan should also offer 24/7 support. AWS Business support plan is the lowest plan that offers 24/7 support.</p><p>The AWS Support plan with the highest level should be assigned to the planner production account. This to make it as easy as possible to report production issues in case of outages.</p><p>In special cases an additional premium support plan can be assigned to a QA account. This plan could be on a lower level than the support plan assigned to the production account.</p><p>If a production environment is not run in the AWS account, instead it&rsquo;s just for dev and test, we recommend Basic support plan.</p><p />",
+  "last_modified": "2020-03-26T09:52:35.332Z"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "36282827043",
+  "title": "Akamai property configuration",
+  "url": "https://i-p-e-x.atlassian.net/wiki/pages/viewpage.action?pageId=36282827043",
+  "content": "<p><ac:link ac:card-appearance=\"inline\"><ri:page ri:space-key=\"IPEX\" ri:content-title=\"AoA Akamai Admins\" ri:version-at-save=\"2\" /><ac:link-body>AoA Akamai Admins</ac:link-body></ac:link> have read access to property configuration. To look at the current configuraion for <a href=\"http://www.ikea.com\">www.ikea.com</a> got to <a href=\"https://control.akamai.com/apps/property-manager/#/property/7576913?gid=24514\">Property : www.ikea.com_PropMgr (akamai.com)</a>.</p><p>Once on property detail page, choose latest version.</p><p /><p>On the version page head down to Property configuration settings section and choose &ldquo;View all &ldquo; tab</p><ac:image ac:align=\"center\" ac:layout=\"center\" ac:original-height=\"484\" ac:original-width=\"1887\"><ri:attachment ri:filename=\"image-20221209-151756.png\" ri:version-at-save=\"1\" /></ac:image><p>Search for &ldquo;add-on-apps rules&ldquo; and you will end up in the section with all current configurations for AoAs. Enjoy!</p><ac:image ac:align=\"center\" ac:layout=\"center\" ac:original-height=\"991\" ac:original-width=\"2197\"><ri:attachment ri:filename=\"image-20221209-152338.png\" ri:version-at-save=\"1\" /></ac:image><p />",
+  "last_modified": "2022-12-09T15:23:52.726Z"
+}

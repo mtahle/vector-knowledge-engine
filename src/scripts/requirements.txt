@@ -1,0 +1,12 @@
+python-dotenv==1.0.1
+requests==2.32.3
+sentence-transformers==4.1.0
+faiss-cpu==1.11.0
+atlassian-python-api==3.41.1
+psutil==7.0.0
+beautifulsoup4==4.12.3
+scikit-learn==1.5.2
+numpy==1.26.4
+tqdm==4.67.1
+pathlib==1.0.1 
+beautifulsoup4==4.13.4

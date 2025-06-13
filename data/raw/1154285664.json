@@ -1,0 +1,7 @@
+{
+  "id": "1154285664",
+  "title": "Account Budget threshold",
+  "url": "https://i-p-e-x.atlassian.net/wiki/pages/viewpage.action?pageId=1154285664",
+  "content": "<p>If budget threshold is met Contact person and Technical contact will receive a warning mail. Persons listed as owners will get instructions according to below screenshot. Technical contacts will get similar mail.</p><ac:image ac:align=\"center\" ac:layout=\"center\" ac:original-height=\"311\" ac:original-width=\"555\"><ri:attachment ri:filename=\"image2020-3-19_14-52-22.png?version=1&amp;modificationDate=1584625944308&amp;cacheVersion=1&amp;api=v2&amp;width=446&amp;height=250\" ri:version-at-save=\"1\" /></ac:image><p /><p>As owner you do not have to worry about step c i.e. Fintool. Just update budget in Cloud Portal as described in step 2 b.</p>",
+  "last_modified": "2020-03-31T10:15:28.525Z"
+}
