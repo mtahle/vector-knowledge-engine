@@ -1,5 +1,5 @@
 {
-  "model_name": "multi-qa-MiniLM-L6-cos-v1",
+  "model_name": "mode-name",
   "chunk_size": 400,
   "chunk_overlap": 100,
   "min_chunk_size": 100,
