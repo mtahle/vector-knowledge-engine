@@ -1,7 +1,0 @@
-{
-  "id": "1164510021",
-  "title": "GitHub Issues to investigate",
-  "url": "https://i-p-e-x.atlassian.net/wiki/pages/viewpage.action?pageId=1164510021",
-  "content": "<p>This page include the GitHub problems found during the pilot.</p><p /><h4>PAT Required</h4><p>It is not possible to use SSH to interact with the Git. PAT enabled for SSO must be used over https. Error when suing SSH:</p><ac:structured-macro ac:name=\"code\" ac:schema-version=\"1\" ac:macro-id=\"01eea1af-879d-42df-9bbc-c8c1ecee2463\"><ac:plain-text-body><![CDATA[ERROR: The `inter-ikea' organization has enabled or enforced SAML SSO. To access\nthis repository, you must use the HTTPS remote with a personal access token\nor SSH with an SSH key and passphrase\nthat has been whitelisted for this organization.]]></ac:plain-text-body></ac:structured-macro><p /><h4>Protecting branches</h4><p>Option to protect master branch from direct merges can&rsquo;t be found in setting any more. </p><p>Result: The option is enabled/visible when first commit has been done.</p>",
-  "last_modified": "2020-08-18T12:58:03.884Z"
-}

@@ -1,7 +1,0 @@
-{
-  "id": "2307391643",
-  "title": "Offboarding IPEX Users",
-  "url": "https://i-p-e-x.atlassian.net/wiki/pages/viewpage.action?pageId=2307391643",
-  "content": "<h3>General </h3><p>Visit <ac:link ac:card-appearance=\"inline\"><ri:page ri:space-key=\"IPEX\" ri:content-title=\"Tools and accesses for new resources\" ri:version-at-save=\"58\" /><ac:link-body>Onboarding and Offboarding of Team Members</ac:link-body></ac:link> for general information regarding offboarding procedures. </p><h3>DevOps</h3><p>Below information is specific for DevOps- and cloud offboarding, and should be performed by the <ac:link ac:card-appearance=\"inline\"><ri:page ri:content-title=\"DevOps Team\" ri:space-key=\"IPEX\" ri:version-at-save=\"21\" /><ac:link-body>IPEX DevOps Team</ac:link-body></ac:link>. </p><p>When notification of user leaving IPEX check that</p><ul><li><p>User is not a member of DevOps created Security Group in AD, <a href=\"https://portal.azure.com/#blade/Microsoft_AAD_IAM/UsersManagementMenuBlade/MsGraphUsers\">Users - Microsoft Azure</a></p></li><li><p>User is not a member of Azure DevOps organization, <a href=\"https://dev.azure.com/iissab-ipex/_settings/users\">Settings &middot; Users (iissab-ipex) - Settings (azure.com)</a></p></li><li><p>Send mail to GitHub support for removal from organization. </p></li><li><p>Send mail to <a href=\"mailto:devops@inter.ikea.com\">devops@inter.ikea.com</a> that user account has been handled.</p></li></ul>",
-  "last_modified": "2023-03-01T10:56:33.589Z"
-}

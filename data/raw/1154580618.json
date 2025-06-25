@@ -1,7 +1,0 @@
-{
-  "id": "1154580618",
-  "title": "Manage Alicloud accounts",
-  "url": "https://i-p-e-x.atlassian.net/wiki/pages/viewpage.action?pageId=1154580618",
-  "content": "<p>For China the preferred cloud platform is Alibaba Cloud. Alicloud accounts are managed via the <ac:link ac:card-appearance=\"inline\"><ri:page ri:content-title=\"INGKA Cloud portal\" ri:version-at-save=\"9\" /><ac:link-body>INGKA Cloud portal</ac:link-body></ac:link>.</p><p>When you have an account in the cloud portal you can <a href=\"https://i-p-e-x.atlassian.net/wiki/spaces/DEVOPS/pages/1154711589/Create+Account+in+Cloud+portal\">order a new Alicloud account</a> </p><p /><p>For account management within account refer <a href=\"https://confluence.build.ingka.ikea.com/display/CF/AliCloud+-+Step-by-step+User+Delegation\">Cloud services wiki</a>.</p>",
-  "last_modified": "2020-04-28T08:56:16.250Z"
-}

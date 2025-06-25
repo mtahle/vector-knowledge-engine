@@ -1,7 +1,0 @@
-{
-  "id": "2407006260",
-  "title": "Azure AD - Inter IKEA",
-  "url": "https://i-p-e-x.atlassian.net/wiki/pages/viewpage.action?pageId=2407006260",
-  "content": "<p>User management is done vi Azure AD Inter IKEA Group tenant where security groups are created to represent the teams.</p><p>Old naming convention: SG-IIG-*team name*-TEAM-CBF_IPEX</p><p>Current naming convention: *team name*-TEAM_IPEX-IIG-CBF-SG</p>",
-  "last_modified": "2021-06-14T05:54:38.707Z"
-}

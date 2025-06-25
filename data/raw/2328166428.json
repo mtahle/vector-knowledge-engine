@@ -1,7 +1,0 @@
-{
-  "id": "2328166428",
-  "title": "Potential OKRs for DevOps",
-  "url": "https://i-p-e-x.atlassian.net/wiki/pages/viewpage.action?pageId=2328166428",
-  "content": "<h2>Data driven decisions</h2><h3>Gather build frequency in DevOps Metrics</h3><p>To be able to better plan for how many build agents we need, and when we need to know how often we build and at what times. If we have this information we can ensure that our teams are enabled but also keep a frugal mindset where we do not over provision agents.</p><h2>Collaborative Culture</h2><h3>Sharing knowledge</h3><p>To create a collaborative culture we need to share knowledge, inspirations and learnings among the teams. This could be done using lunch sessions, longer sessions with workshops or similar. This should not conflict with the Demo culture already being cultivated. </p><p /><h3>Chaos Engineering Game day</h3><p>There are generally 3 ways of conducting gamedays, software oriented, process oriented or both. All of the types require strong preparation but provide a strong platform for understanding the systems and processes in place. The most reasonable one to start with would be the process oriented gameday.</p>",
-  "last_modified": "2021-04-23T13:24:02.532Z"
-}
