@@ -1,7 +1,0 @@
-{
-  "id": "820314275",
-  "title": "DEXF Pilot Project",
-  "url": "https://i-p-e-x.atlassian.net/wiki/pages/viewpage.action?pageId=820314275",
-  "content": "<p>DEXF will be the pilot project for GitHub. Th pilot project will be done in several steps:</p><ol><li>Migrate first repository to GitHub</li><li>Connect Github with AWS. Adapt builds in AWS for the first repository to pull code from GitHub.</li><li>Store build artefacts in GitHub Artifacts.</li><li>Repeat for each of the repositories one at the time.</li><li>Investigate how to migrate builds from AWS to GitHub Actions or Azure DevOps Pipelines.</li><li>Start collecting&nbsp;<ac:link><ri:page ri:content-title=\"DevOps Metrics\" ri:version-at-save=\"1\" /></ac:link></li></ol><p><br /></p><p>There are sub pages to this that documents findings in different steps and how to:s for the different parts.</p><p>DevOps team will assist during the entire migration and how to collect <ac:link><ri:page ri:content-title=\"DevOps Metrics\" ri:version-at-save=\"1\" /></ac:link></p><p><br /></p>",
-  "last_modified": "2020-04-29T07:52:51.145Z"
-}

@@ -1,7 +1,0 @@
-{
-  "id": "823656505",
-  "title": "DevOps Process",
-  "url": "https://i-p-e-x.atlassian.net/wiki/pages/viewpage.action?pageId=823656505",
-  "content": "<p>There are many different definitions of DevOps. Microsoft uses definition below that highlights the core concepts</p><p>&quot;</p><p><a href=\"https://docs.microsoft.com/en-us/azure/devops/learn/what-is-devops\">DevOps is the union of people, process, and products to enable continuous delivery of value to our end users. The contraction of &ldquo;Dev&rdquo; and &ldquo;Ops&rdquo; refers to replacing siloed Development and Operations to create multidisciplinary teams that now work together with shared and efficient practices and tools. Essential DevOps practices include agile planning, continuous integration, continuous delivery, and monitoring of applications.</a></p><p>&quot;</p>",
-  "last_modified": "2020-12-01T16:25:42.744Z"
-}

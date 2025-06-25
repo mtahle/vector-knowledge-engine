@@ -1,7 +1,0 @@
-{
-  "id": "818348143",
-  "title": "Meetings",
-  "url": "https://i-p-e-x.atlassian.net/wiki/pages/viewpage.action?pageId=818348143",
-  "content": "<p><ac:structured-macro ac:name=\"content-report-table\" ac:schema-version=\"1\" ac:macro-id=\"1672d899-cb8c-44f0-ba75-da7acc199ebd\"><ac:parameter ac:name=\"blueprintModuleCompleteKey\">                    com.atlassian.confluence.plugins.confluence-business-blueprints:meeting-notes-blueprint                </ac:parameter><ac:parameter ac:name=\"contentBlueprintId\">89caf976-957e-45b7-9ec5-6777a633f09b</ac:parameter><ac:parameter ac:name=\"analyticsKey\">meeting-notes</ac:parameter><ac:parameter ac:name=\"blankDescription\">Plan your meetings and share notes and actions with your team.                </ac:parameter><ac:parameter ac:name=\"maxResults\">150</ac:parameter><ac:parameter ac:name=\"blankTitle\">Meeting notes</ac:parameter><ac:parameter ac:name=\"spaces\"><ri:space ri:space-key=\"DEVOPS\" /></ac:parameter><ac:parameter ac:name=\"labels\">meeting-notes</ac:parameter></ac:structured-macro></p>",
-  "last_modified": "2019-09-03T12:07:55.391Z"
-}

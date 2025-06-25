@@ -1,7 +1,0 @@
-{
-  "id": "847806523",
-  "title": "CI/CD Strategies",
-  "url": "https://i-p-e-x.atlassian.net/wiki/pages/viewpage.action?pageId=847806523",
-  "content": "<h2>Deployment strategies</h2><p>Each project should document the deployment strategies and flow that are being used.</p><p>If any manuell step is required to deploy to any stage (dev, QA, Production) that should be clearly listed in a step by step form.</p><p>The recommended way to deploy new version is to use a Blue/Green deployment. See&nbsp;<ac:link><ri:page ri:space-key=\"IPEX\" ri:content-title=\"Deployment Strategies\" ri:version-at-save=\"9\" /></ac:link> for more details around different strategies.</p><h3>Production issues (Rollback strategy)</h3><p>In case of an issue being found in the production environment the project should document the strategy used to handle that. Depending on the severity of the issue different strategies could be used.</p><p>If rollback is used for critical issues the rollback process should be documented as a step by step run-book.</p><h2>CI / CD</h2><p>Each project should document their Continues Integration / Continues Delivery (CI / CD) pipelines.</p><p>It should clearly state (but not limited to):</p><ul><li>What tools are used, and how does a team member get access.</li><li>How are new versions built, rebuilt, and stored.</li><li>What steps are involved in the pipeline, automatic tests, manual tests, manual promotions, feature flags, etc.</li></ul><p><br /></p>",
-  "last_modified": "2022-01-05T15:11:05.803Z"
-}

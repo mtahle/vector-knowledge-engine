@@ -1,7 +1,0 @@
-{
-  "id": "848756744",
-  "title": "Account Management",
-  "url": "https://i-p-e-x.atlassian.net/wiki/pages/viewpage.action?pageId=848756744",
-  "content": "<p>Since there is some configuration needed for the&nbsp;<ac:link><ri:page ri:content-title=\"Default Setup for Product Teams\" ri:version-at-save=\"6\" /><ac:plain-text-link-body><![CDATA[Default DevOps setup]]></ac:plain-text-link-body></ac:link>&nbsp;<strong>cloud accounts should be ordered via&nbsp;<ac:link><ri:page ri:content-title=\"DevOps Team\" ri:version-at-save=\"4\" /><ac:plain-text-link-body><![CDATA[Devops team]]></ac:plain-text-link-body></ac:link>.</strong> The <strong>preferred CBF cloud platform is Azure</strong> but it is possible to use Google Cloud Platform as well. Primary use case for GCP will be if it concerns a function- or service which does not exist in Azure, but has the potential of adding great business benefits for IKEA. At the moment the environment is set up to allow for Test/DEV/Sandboxing activities.</p><p>If you use either Azure of GCP accounts should be ordered via CBF.</p><p><br /></p><p>Don't forget to update&nbsp;<ac:link><ri:page ri:content-title=\"Inventory of Cloud Accounts\" ri:version-at-save=\"24\" /></ac:link>.</p><p><br /></p><p>For questions on Cloud, Cloud Strategy and Cloud Platforms, please reach out to Cloud Services at Inter IKEA CBF,</p><p><a href=\"mailto:cloud.services@inter-ikea.com\">cloud.services@inter.ikea.com</a></p><p><br /></p>",
-  "last_modified": "2021-02-18T15:18:18.337Z"
-}

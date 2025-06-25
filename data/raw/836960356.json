@@ -1,7 +1,0 @@
-{
-  "id": "836960356",
-  "title": "Package Management Systems",
-  "url": "https://i-p-e-x.atlassian.net/wiki/pages/viewpage.action?pageId=836960356",
-  "content": "<h4>Requirements:</h4><p>The selected package manager need support for:</p><ul><li>npm Registry</li><li>Maven artifacts</li><li>Docker images</li></ul><p>Integration with major CI/CD pipelines, e.g Azure Devops, Atlassian Pipelines.</p><h4>Options:</h4><p>The following tools have been identified as valid options:</p><p>JFrog Artifactory:&nbsp;<a href=\"https://jfrog.com/artifactory/\">https://jfrog.com/artifactory/</a></p><p>GitHub Package Registry:&nbsp;<a href=\"https://github.com/features/package-registry\">https://github.com/features/package-registry</a></p><p>Azure DevOps Artifacts&nbsp;<a href=\"https://azure.microsoft.com/sv-se/services/devops/artifacts/\">https://azure.microsoft.com/sv-se/services/devops/artifacts/</a></p><h4>Primary choice:</h4><p>JFrog or Azure Artifcats are the primary choices. Drawback with Azure Artifacts is that it doesn't handle Docker Images, we then must use either AWS ECR or Azure Container Registry.</p>",
-  "last_modified": "2022-01-05T15:16:56.651Z"
-}

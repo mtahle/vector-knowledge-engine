@@ -1,7 +1,0 @@
-{
-  "id": "854720549",
-  "title": "Evaluation / PoC project",
-  "url": "https://i-p-e-x.atlassian.net/wiki/pages/viewpage.action?pageId=854720549",
-  "content": "<p>The evaluation project is ment to prepare for a coming project based pilot project.</p><p>We need to create or evaluate:</p><ul><li>How to get access and manage users in CBF GitHub.</li><li>How to integrate with Jira and get the workflow we have today functioning.</li><li>Create a step by step procedure how to setup and migrate to GitHub, to be used by the pilot project.</li></ul><p><br /></p><p>See meeting notes for more information:&nbsp;<ac:link><ri:page ri:content-title=\"2019-09-04 Meeting notes - Evaluation of GitHub M2 Setup\" ri:version-at-save=\"3\" /></ac:link></p><p><br /></p><h2>PoC Status</h2><p>Jira project to be used has been created:&nbsp;<span style=\"color: rgb(31,73,125);\"><a href=\"https://i-p-e-x.atlassian.net/browse/GP\">https://i-p-e-x.atlassian.net/browse/GP</a></span></p><p>Could be that webhooks and apps need to be installed / setup on a site level and not on a project level.<br /><br /></p><p><br /></p>",
-  "last_modified": "2019-09-19T09:52:52.128Z"
-}
